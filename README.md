@@ -3,10 +3,15 @@
 AI-powered accessibility audit tool for mobile apps.
 
 ## The Problem
-100% of Nigerian banking apps are completely inaccessible to visually impaired users. Millions are locked out of essential services.
+100% of Nigerian banking apps are completely inaccessible to visually impaired users.
 
-## What It Does
-Accepts a list of UI elements from any mobile app and returns an accessibility score from A to F.
+## Endpoints
+- `GET /` — Health check
+- `POST /audit` — Manual audit from element list
+- `POST /scan` — Auto-scan from Android UI tree XML
+- `GET /audits/recent` — Recent audits
+- `GET /stats` — Aggregate statistics
+- `GET /grades` — Grading system explanation
 
 ## Scoring
 - A: 90%+ labeled. Fully accessible.
@@ -15,10 +20,9 @@ Accepts a list of UI elements from any mobile app and returns an accessibility s
 - D: 25-49% labeled. Mostly inaccessible.
 - F: Below 25% labeled. Completely inaccessible.
 
-## Endpoints
-- GET / — Health check
-- POST /audit — Submit UI elements for scoring
-- GET /grades — Get grading system explanation
+## Environment Variables
+- `SUPABASE_URL`
+- `SUPABASE_KEY`
 
 ## Deploy
 Hosted on Render. Free tier.
